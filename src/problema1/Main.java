@@ -6,40 +6,48 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner opcion = new Scanner(System.in);
-        String datoIngreso = opcion.nextLine();
 
-        System.out.println("Hola" + datoIngreso);
+        boolean salir = false;
 
-        System.out.println("===============================");
-        System.out.println("********MENÚ PRINCIPAL*********");
-        System.out.println("===============================");
-        System.out.println("a. Añadir nuevo cliente ");
-        System.out.println("b. Borrar un cliente.");
-        System.out.println("c. Buscar un cliente.");
-        System.out.println("d. Mostrar los clientes.");
-        System.out.println("e. Salir.");
-        System.out.println("===============================");
-        System.out.println("Seleccione una opción:");
 
-        switch (datoIngreso){
-            case "a":
+        do{
+            System.out.println("===============================");
+            System.out.println("********MENÚ PRINCIPAL*********");
+            System.out.println("===============================");
+            System.out.println("a. Añadir nuevo cliente ");
+            System.out.println("b. Borrar un cliente.");
+            System.out.println("c. Buscar un cliente.");
+            System.out.println("d. Mostrar los clientes.");
+            System.out.println("e. Salir.");
+
+            System.out.println("===============================");
+            System.out.println("Seleccione una opción:");
+            String datoIngreso = opcion.nextLine();
+
+            switch (datoIngreso){
+                case "a":
                     System.out.println("Has seleccionado la opción A");
                     break;
-            case "b":
+                case "b":
                     System.out.println("Has seleccionado la opción B");
                     break;
-            case "c":
+                case "c":
                     System.out.println("Has seleccionado la opción C");
                     break;
-            case "d":
+                case "d":
                     System.out.println("Has seleccionado la opción D");
                     break;
-            case "e":
-                    System.out.println("Has seleccionado la opción E");
+                case "e":
+                    System.out.println("Adiós.");
+                    salir = true;
                     break;
-            default:
+                default:
                     System.out.println("Error");
                     break;
             }
+        }while(!salir);
+
+
+
     }
 }
