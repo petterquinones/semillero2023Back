@@ -6,6 +6,9 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner opcion = new Scanner(System.in);
+        String datoIngreso = opcion.nextLine();
+
+        System.out.println("Hola" + datoIngreso);
 
         System.out.println("===============================");
         System.out.println("********MENÚ PRINCIPAL*********");
@@ -18,30 +21,25 @@ public class Main {
         System.out.println("===============================");
         System.out.println("Seleccione una opción:");
 
-        String datoIngreso =opcion.nextLine();
-
-        System.out.println(datoIngreso);
-
         switch (datoIngreso){
             case "a":
-                System.out.println("Has seleccionado la opción A");
-                break;
+                    System.out.println("Has seleccionado la opción A");
+                    break;
             case "b":
-                System.out.println("Has seleccionado la opciópn B");
-                break;
+                    System.out.println("Has seleccionado la opción B");
+                    break;
             case "c":
-                System.out.println("Has seleccionado la opciópn C");
-                break;
+                    System.out.println("Has seleccionado la opción C");
+                    break;
             case "d":
-                System.out.println("Has seleccionado la opciópn D");
-                break;
+                    System.out.println("Has seleccionado la opción D");
+                    break;
             case "e":
-                System.out.println("Has seleccionado la opciópn E");
-                break;
+                    System.out.println("Has seleccionado la opción E");
+                    break;
             default:
-                System.out.println("has ingresado un valor no especificado");
-        break;
-        }
-
+                    System.out.println("Error");
+                    break;
+            }
     }
 }
