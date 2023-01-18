@@ -5,19 +5,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Clase scanner para ingresar datos y validar
-        Scanner opcion = new Scanner(System.in);
+        Scanner ingreso = new Scanner(System.in);
 
         //Declaración de un array de tipo cliente
-        int longitudArray = 4;
-        Cliente [] cliente = new Cliente[longitudArray];
+        Cliente [] cliente = new Cliente[4];
 
         //Asignación de clientes al array
         cliente[0] = new Cliente("Sara", 111111);
         cliente[1] = new Cliente("Pedro", 222222);
         cliente[2] = new Cliente("Victoria", 333333);
-        cliente[3] = new Cliente("Damian", 444444);
 
-        boolean salir = false;
+                boolean salir = false;
 
         do {
             System.out.println("===============================");
@@ -31,11 +29,22 @@ public class Main {
 
             System.out.println("===============================");
             System.out.println("Seleccione una opción:");
-            String datoIngreso = opcion.nextLine();
+            String datoIngreso = ingreso.nextLine();
 
+            //Evaluar el dato de ingreso y estudiar que case evaluar
             switch (datoIngreso) {
                 case "a":
-                    System.out.println("Has seleccionado la opción A");
+                    System.out.println("=====================================");
+                    System.out.println("*******REGISTRAR NUEVO CLIENTE*******");
+                    System.out.println("=====================================");
+
+                    //Solicitar datos para creación nuevo Cliente
+                    System.out.println("Ingresa el nuevo Nombre: ");
+                    String name = ingreso.nextLine();
+                    System.out.println("Ingresa número de cedula: ");
+                    Integer cedula = ingreso.nextInt();
+                    //Actualizar array con nuevo cliente
+                    cliente[3] = new Cliente(name,cedula);
                     break;
 
                 case "b":
@@ -68,5 +77,6 @@ public class Main {
             }
         }
         while(!salir);
+
     }
 }
