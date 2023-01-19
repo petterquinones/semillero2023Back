@@ -1,5 +1,6 @@
 package problema1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -11,9 +12,10 @@ public class Main {
         Cliente [] cliente = new Cliente[4];
 
         //Asignación de clientes al array
-        cliente[0] = new Cliente("Sara", 111111);
-        cliente[1] = new Cliente("Pedro", 222222);
-        cliente[2] = new Cliente("Victoria", 333333);
+        cliente[0] = new Cliente("Uno", 111111);
+        cliente[1] = new Cliente("Dos", 222222);
+        cliente[2] = new Cliente("Tres", 333333);
+        cliente[3] = new Cliente("Cuatro", 44444);
 
                 boolean salir = false;
 
@@ -27,6 +29,9 @@ public class Main {
             System.out.println("d. Mostrar los clientes.");
             System.out.println("e. Salir.");
 
+            System.out.println("*******");
+            System.out.println(cliente.length);
+            System.out.println("*******");
             System.out.println("===============================");
             System.out.println("Seleccione una opción:");
             String datoIngreso = ingreso.nextLine();
@@ -38,13 +43,19 @@ public class Main {
                     System.out.println("*******REGISTRAR NUEVO CLIENTE*******");
                     System.out.println("=====================================");
 
-                    //Solicitar datos para creación nuevo Cliente
-                    System.out.println("Ingresa el nuevo Nombre: ");
-                    String name = ingreso.nextLine();
-                    System.out.println("Ingresa número de cedula: ");
-                    Integer cedula = ingreso.nextInt();
-                    //Actualizar array con nuevo cliente
-                    cliente[3] = new Cliente(name,cedula);
+                    //Para agregar un valor se debe validar que el array sea menor que 10 para agregar un nuevo cliente
+                    if(cliente.length < 10){
+                        //Solicitar datos para creación nuevo Cliente
+                        System.out.println("Ingresa el nuevo Nombre: ");
+                        String name = ingreso.nextLine();
+                        System.out.println("Ingresa número de cedula: ");
+                        Integer cedula = ingreso.nextInt();
+
+                        cliente = Arrays.copyOf(cliente,cliente.length+1); //Crear una copia del array y aumentar el tamaño
+                        cliente[cliente.length-1] = new Cliente(name,cedula); //Actualizar array con nuevo cliente
+                    }else{
+                        System.out.println("Debe borrar un cliente antes de poder ingresar uno nuevo");
+                    }
                     break;
 
                 case "b":
