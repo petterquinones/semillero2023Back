@@ -59,7 +59,7 @@ public class Main {
                     break;
 
                 case "c":
-                    System.out.println("Has seleccionado la opción C");
+                    System.out.println("Has seleccionado la opción Cccccc");
                     break;
 
                 case "d":
