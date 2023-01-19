@@ -1,5 +1,6 @@
 package problema1;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,10 +13,10 @@ public class Main {
         Cliente [] cliente = new Cliente[4];
 
         //Asignación de clientes al array
-        cliente[0] = new Cliente("Uno", 111111);
-        cliente[1] = new Cliente("Dos", 222222);
-        cliente[2] = new Cliente("Tres", 333333);
-        cliente[3] = new Cliente("Cuatro", 44444);
+        cliente[0] = new Cliente("Sara", 1111);
+        cliente[1] = new Cliente("Pedro", 2222);
+        cliente[2] = new Cliente("Jesus", 3333);
+        cliente[3] = new Cliente("Victoria", 4444);
 
                 boolean salir = false;
 
@@ -59,7 +60,19 @@ public class Main {
                     break;
 
                 case "c":
-                    System.out.println("Has seleccionado la opción Cccccc");
+                    System.out.println("=====================================");
+                    System.out.println("****BUSCAR CLIENTES REGISTRADOS******");
+                    System.out.println("=====================================");
+                    System.out.println("Ingrese cedula a buscar: ");
+                    int cedulaBuscar = ingreso.nextInt();
+                    for (int i = 0; i < cliente.length; i++) {
+                      if(cliente[i].getCedula() == cedulaBuscar){
+                          System.out.println("El cliente que se busca está en la posición "
+                                  + i +" El cliente se llama "+ cliente[i].getNombre() +
+                                  " y su cédula es: " + cliente[i].getCedula());
+                      }
+                    }
+                    salir = true; //salir del caso para finalizar menú
                     break;
 
                 case "d":
