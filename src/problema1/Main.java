@@ -10,13 +10,13 @@ public class Main {
         Scanner ingreso = new Scanner(System.in);
 
         //Declaración de un array de tipo cliente
-        Cliente [] cliente = new Cliente[4];
+        Cliente [] clientes = new Cliente[4];
 
         //Asignación de clientes al array
-        cliente[0] = new Cliente("Sara", 1111);
-        cliente[1] = new Cliente("Pedro", 2222);
-        cliente[2] = new Cliente("Jesus", 3333);
-        cliente[3] = new Cliente("Victoria", 4444);
+        clientes[0] = new Cliente("Sara", 1111);
+        clientes[1] = new Cliente("Pedro", 2222);
+        clientes[2] = new Cliente("Jesus", 3333);
+        clientes[3] = new Cliente("Victoria", 4444);
 
                 boolean salir = false;
 
@@ -31,7 +31,7 @@ public class Main {
             System.out.println("e. Salir.");
 
             System.out.println("*******");
-            System.out.println(cliente.length);
+            System.out.println(clientes.length);
             System.out.println("*******");
             System.out.println("===============================");
             System.out.println("Seleccione una opción:");
@@ -40,11 +40,11 @@ public class Main {
             //Evaluar el dato de ingreso y estudiar que case evaluar
             switch (datoIngreso) {
                 case "a":
-                    if(cliente.length < 10){
+                    if(clientes.length < 10){
                         Cliente client = Herramientas.registrarCliente();
                         if(client != null){
-                            cliente = Arrays.copyOf(cliente,cliente.length+1); //Crear una copia del array y aumentar el tamaño
-                            cliente[cliente.length-1] = client; //Actualizar array con nuevo cliente
+                            clientes = Arrays.copyOf(clientes,clientes.length+1); //Crear una copia del array y aumentar el tamaño
+                            clientes[clientes.length-1] = client; //Actualizar array con nuevo cliente
                             System.out.println("Usuario registrado");
                         }else{
                             System.out.println("Verifica los datos ingresados");
@@ -65,11 +65,11 @@ public class Main {
                     System.out.println("=====================================");
                     System.out.println("Ingrese cedula a buscar: ");
                     int cedulaBuscar = ingreso.nextInt();
-                    for (int i = 0; i < cliente.length; i++) {
-                      if(cliente[i].getCedula() == cedulaBuscar){
+                    for (int i = 0; i < clientes.length; i++) {
+                      if(clientes[i].getCedula() == cedulaBuscar){
                           System.out.println("El cliente que se busca está en la posición "
-                                  + i +" El cliente se llama "+ cliente[i].getNombre() +
-                                  " y su cédula es: " + cliente[i].getCedula());
+                                  + i +" El cliente se llama "+ clientes[i].getNombre() +
+                                  " y su cédula es: " + clientes[i].getCedula());
                       }
                     }
                     salir = true; //salir del caso para finalizar menú
@@ -81,7 +81,7 @@ public class Main {
                     System.out.println("=====================================");
 
                     //ForEach para conocer los objetos almacenados en el arreglo.
-                    for (Cliente client : cliente) {
+                    for (Cliente client : clientes) {
                         System.out.println((client));
                     }
                     salir = true; //salir del caso para finalizar menú
