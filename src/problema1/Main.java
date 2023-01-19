@@ -39,20 +39,16 @@ public class Main {
             //Evaluar el dato de ingreso y estudiar que case evaluar
             switch (datoIngreso) {
                 case "a":
-                    System.out.println("=====================================");
-                    System.out.println("*******REGISTRAR NUEVO CLIENTE*******");
-                    System.out.println("=====================================");
-
-                    //Para agregar un valor se debe validar que el array sea menor que 10 para agregar un nuevo cliente
                     if(cliente.length < 10){
-                        //Solicitar datos para creación nuevo Cliente
-                        System.out.println("Ingresa el nuevo Nombre: ");
-                        String name = ingreso.nextLine();
-                        System.out.println("Ingresa número de cedula: ");
-                        Integer cedula = ingreso.nextInt();
+                        Cliente client = Herramientas.registrarCliente();
+                        if(client != null){
+                            cliente = Arrays.copyOf(cliente,cliente.length+1); //Crear una copia del array y aumentar el tamaño
+                            cliente[cliente.length-1] = client; //Actualizar array con nuevo cliente
+                            System.out.println("Usuario registrado");
+                        }else{
+                            System.out.println("Verifica los datos ingresados");
+                        }
 
-                        cliente = Arrays.copyOf(cliente,cliente.length+1); //Crear una copia del array y aumentar el tamaño
-                        cliente[cliente.length-1] = new Cliente(name,cedula); //Actualizar array con nuevo cliente
                     }else{
                         System.out.println("Debe borrar un cliente antes de poder ingresar uno nuevo");
                     }
