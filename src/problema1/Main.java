@@ -80,9 +80,12 @@ public class Main {
                     System.out.println("********CLIENTES REGISTRADOS*********");
                     System.out.println("=====================================");
 
-                    //ForEach para conocer los objetos almacenados en el arreglo.
-                    for (Cliente client : clientes) {
-                        System.out.println((client));
+
+                    for (int i = 0; i < clientes.length; i++) {
+                        System.out.println("Cliente número: " + i +
+                                            " El cliente se llama " + clientes[i].getNombre() +
+                                            " y su cédula es " + clientes[i].getCedula());
+
                     }
                     salir = true; //salir del caso para finalizar menú
                     break;
