@@ -31,10 +31,9 @@ public class Main {
             System.out.println("===============================");
             System.out.println("********MENÚ PRINCIPAL*********");
             System.out.println("===============================");
-
-            System.out.println("*******");
-            System.out.println(clientes.length);
-            System.out.println("*******");
+            for (String s : menu) {
+                System.out.println(s);
+            }
             System.out.println("===============================");
             System.out.println("Seleccione una opción:");
             String datoIngreso = ingreso.nextLine();
