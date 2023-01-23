@@ -9,17 +9,15 @@ public class Main {
         //Clase scanner para ingresar datos y validar
         Scanner ingreso = new Scanner(System.in);
 
-        String [] menu = {
-                "a. Añadir nuevo cliente",
-                "b. Borrar un cliente.",
-                "c. Buscar un cliente..",
-                "d. Mostrar los clientes.",
-                "e. Salir."
-        }; //Declaración e inicialización de un array
-
-
         //Declaración de un array de tipo cliente
         Cliente [] clientes = new Cliente[4];
+        String []menu = {
+                "a. Añadir nuevo cliente ",
+                "b. Borrar un cliente.",
+                "c. Buscar un cliente.",
+                "d. Mostrar los clientes.",
+                "e. Salir."
+        };
 
         //Asignación de clientes al array
         clientes[0] = new Cliente("Sara", 1111);
@@ -27,14 +25,16 @@ public class Main {
         clientes[2] = new Cliente("Jesus", 3333);
         clientes[3] = new Cliente("Victoria", 4444);
 
-        boolean salir = false;
+                boolean salir = false;
 
         do {
+            System.out.println("===============================");
             System.out.println("********MENÚ PRINCIPAL*********");
+            System.out.println("===============================");
 
-            for (String s : menu) {
-                System.out.println(s);
-            }
+            System.out.println("*******");
+            System.out.println(clientes.length);
+            System.out.println("*******");
             System.out.println("===============================");
             System.out.println("Seleccione una opción:");
             String datoIngreso = ingreso.nextLine();
@@ -62,7 +62,9 @@ public class Main {
                     break;
 
                 case "c":
+                    System.out.println("=====================================");
                     System.out.println("****BUSCAR CLIENTES REGISTRADOS******");
+                    System.out.println("=====================================");
                     System.out.println("Ingrese cedula a buscar: ");
                     int cedulaBuscar = ingreso.nextInt();
                     for (int i = 0; i < clientes.length; i++) {
@@ -76,13 +78,13 @@ public class Main {
                     break;
 
                 case "d":
+                    System.out.println("=====================================");
                     System.out.println("********CLIENTES REGISTRADOS*********");
+                    System.out.println("=====================================");
 
-                    for (int i = 0; i < clientes.length; i++) {
-                        System.out.println("Cliente número: " + i +
-                                            " El cliente se llama " + clientes[i].getNombre() +
-                                            " y su cédula es " + clientes[i].getCedula());
-
+                    //ForEach para conocer los objetos almacenados en el arreglo.
+                    for (Cliente client : clientes) {
+                        System.out.println((client));
                     }
                     salir = true; //salir del caso para finalizar menú
                     break;
