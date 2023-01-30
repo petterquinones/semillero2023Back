@@ -1,6 +1,5 @@
 package problema1;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -31,8 +30,8 @@ public class Main {
             System.out.println("===============================");
             System.out.println("********MENÚ PRINCIPAL*********");
             System.out.println("===============================");
-            for (String s : menu) {
-                System.out.println(s);
+            for (String arrayMenu : menu) {//Recorro el array y se imprime el menú
+                System.out.println(arrayMenu);
             }
             System.out.println("===============================");
             System.out.println("Seleccione una opción:");
@@ -61,31 +60,13 @@ public class Main {
                     break;
 
                 case "c":
-                    System.out.println("=====================================");
-                    System.out.println("****BUSCAR CLIENTES REGISTRADOS******");
-                    System.out.println("=====================================");
-                    System.out.println("Ingrese cedula a buscar: ");
-                    int cedulaBuscar = ingreso.nextInt();
-                    for (int i = 0; i < clientes.length; i++) {
-                      if(clientes[i].getCedula() == cedulaBuscar){
-                          System.out.println("El cliente que se busca está en la posición "
-                                  + i +" El cliente se llama "+ clientes[i].getNombre() +
-                                  " y su cédula es: " + clientes[i].getCedula());
-                      }
-                    }
-                    salir = true; //salir del caso para finalizar menú
+                    Herramientas.buscarCliente(clientes);
+                    salir = true;
                     break;
 
                 case "d":
-                    System.out.println("=====================================");
-                    System.out.println("********CLIENTES REGISTRADOS*********");
-                    System.out.println("=====================================");
-
-                    //ForEach para conocer los objetos almacenados en el arreglo.
-                    for (Cliente client : clientes) {
-                        System.out.println((client));
-                    }
-                    salir = true; //salir del caso para finalizar menú
+                    Herramientas.mostrarClientes(clientes);
+                    salir = true;
                     break;
 
                 case "e":
