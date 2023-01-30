@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import problema1.Cliente;
-import problema1.Herramientas;
-
 public class Main {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
@@ -28,6 +25,8 @@ public class Main {
             String opcion = console.nextLine();
             switch (opcion){
                 case "a":
+                    Herramientas.registrarCliente();
+                    System.out.println(" Cliente Registrado. ");
                     break;
 
                 case "b":
@@ -37,6 +36,7 @@ public class Main {
                     break;
 
                 case "d":
+                    Herramientas.listarCliente(Cliente);
                     break;
 
                 case "e":
